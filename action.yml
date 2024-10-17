@@ -1,0 +1,40 @@
+name: set-status-of-the-commit
+description: Set status of the commit
+author: Omnilogy
+inputs:
+  token:
+    description: Auth token
+    default: "${{ github.token }}"
+    required: false
+
+  status:
+    description: status of the commit "error" | "failure" | "pending" | "success"
+    default: success
+    required: false
+
+  repo:
+    description: Repository name (current by default)
+    required: false
+
+  sha:
+    description: The SHA hash of the commit to be updated. It can be determined automatically for pushes and pull requests, but must be provided for other events
+    default: "${{ github.sha }}"
+    required: false
+
+  targetUrl:
+    description: The target URL to be associated with this status. This URL will be linked from the GitHub UI for easy access to the status source
+    default: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+    required: false
+
+  artifacts:
+    description: Artifacts
+    required: false
+
+  context:
+    description: A label to distinguish this status from other system statuses.
+    default: "BuiltArtifact"
+    required: false
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

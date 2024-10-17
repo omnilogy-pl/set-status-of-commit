@@ -1,0 +1,23 @@
+{
+  "name": "set-status-of-the-commit",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "typeCheck": "tsc --pretty --noEmit",
+    "build": "rm -rf dist && esbuild src/main.ts --bundle --outfile=./dist/index.js --minify --platform=node"
+  },
+  "author": "Omnilogy",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=20.17"
+  }
+}
