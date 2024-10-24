@@ -4,7 +4,9 @@
   "main": "dist/main.js",
   "scripts": {
     "typeCheck": "tsc --pretty --noEmit",
-    "build": "rm -rf dist && esbuild src/main.ts --bundle --outfile=./dist/index.js --minify --platform=node"
+    "build": "rm -rf dist && esbuild src/main.ts --bundle --outfile=./dist/index.js --minify --platform=node",
+    "format": "prettier ./src --write --log-level=silent",
+    "format:check": "prettier ./src --check"
   },
   "author": "Omnilogy",
   "license": "MIT",
@@ -15,7 +17,8 @@
   },
   "dependencies": {
     "@actions/core": "^1.10.1",
-    "@actions/github": "^6.0.0"
+    "@actions/github": "^6.0.0",
+    "prettier": "^3.3.3"
   },
   "engines": {
     "node": ">=20.17"

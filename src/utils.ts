@@ -17,7 +17,7 @@ export const validateCommitStatusState = (state: string): CommitStatusState => {
     error: true,
     failure: true,
     pending: true,
-    success: true
+    success: true,
   };
 
   if (state === "cancelled") {
@@ -47,5 +47,4 @@ export const parseRepoName = (repository: string): Array<string> => {
 
   const { owner, repo } = context.repo;
   return [owner, repo];
-
 };
